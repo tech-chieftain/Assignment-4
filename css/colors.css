@@ -1,0 +1,29 @@
+/* Gotta work more on colors!!!!! */
+
+
+/* COLORS */
+
+.red {color: #222;}
+.blue {color: rgb(13, 13, 197);}
+.green {color: rgb(16, 112, 91);}
+.green-blue {color:#145;}
+.black {color:#000;}
+.darkgrey{color:#222;}
+.grey{color:#555;}
+.lightgrey{color: #777;}
+.white {color: white;}
+
+/* Background Colors */
+
+.bg-red {background-color: #f00;}
+.bg-lightred {background-color: rgb(201, 23, 23)}
+.bg-darkred {background-color: rgb(134, 15, 15)}
+.bg-blue {background-color: rgb(11, 11, 185);}
+.bg-darkblue {background-color: #131c50;}
+.bg-green {background-color: rgb(16, 112, 91);}
+.bg-green-blue{background-color: #145;}
+.bg-black {background-color: #000;}
+.bg-darkgrey {background-color: #222;}
+.bg-grey {background-color: #555;}
+.bg-lightgrey {background-color: #777;}
+.bg-white {background-color: white;}
