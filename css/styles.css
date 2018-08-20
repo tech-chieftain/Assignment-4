@@ -16,9 +16,9 @@
 
 .wrapper {width: 100%;height: 100%;}
 
-.height-auto {height: auto;margin-top: 6px;}
-.height1 {height: 33.3333334%; margin-top: 6px;}
-.height2 {max-height: 50%; margin-top: 6px;}
+.height-auto {height: auto;}
+.height1 {height: 33.3333334%; margin-top: 6px;clear: both;}
+.height2 {height: 50%; margin-top: 6px;clear: both;}
 
 .height1:after{
     content: "";
@@ -29,14 +29,12 @@
 .box-1 {
     float: left;
     width: 32%;
-    height: 100%;
     margin-left: 2%;
     
 }
 .box-2{
     float: left;
     width: 66%;
-    height: 100%;
     margin-left: 1%;
     
 }
@@ -57,18 +55,30 @@
     display: block;
     clear: both;
     visibility: hidden;
+    overflow: auto;
 }
+
+.table {display: table;}
+.table-cell {display: table-cell;}
+.table-cell-middle {vertical-align: middle;}
+.table-cell-top {vertical-align: top}
+.table-cell-bottom {vertical-align: bottom}
+
+/* Borders All Sides */
+
 .border-right{border-right: 2px solid rgba(0,0,0,0.3);}
 .padding-small{padding: 5px;}
 .padding-medium{padding: 10px;}
 .padding-large{padding: 15px;}
 .padding-vlarge{padding: 20px;}
+
 /*           Navbar          */
 
 .navbar {
     height: 55px;
+    
 }
-.navbar-fixed{
+.navbar-fixed{ /* Fixed effect for the navbar */
     position: fixed;
     width: 100%;
     z-index: 100;
@@ -79,13 +89,16 @@
 }
 
 .nav-container {
+    position: relative;
     list-style-type: none;
     margin: 0;
     padding: 0;
+    z-index: 3;
     
 }
 
 .nav-container li {
+    z-index: 3;
     float: left;
     
 }
@@ -136,11 +149,12 @@
     margin-top: 50px;
     font-size: 4em;
     display: block;
-    height: 30%;
+    height: auto;
 }
 .p-small {width: 50%;}
 .p-medium {width: 75%;}
 .p-large {width: 85%;}
+
 
 
 /*           Forms           */
@@ -148,7 +162,9 @@ form .height1,form .box-2,form .box-3{
     height: auto;
 }
 form {
-    padding: 20px;
+    padding-left: 2.5%;
+    padding-right: 2.5%;
+    padding-top: 2.5%;
 }
 input, textarea {
     width: 100%; 
@@ -176,6 +192,7 @@ input, textarea {
 .button:hover{
     border: 2px solid white;
 }
+
 .size-1{width: 300px;}
 .size-2{width: 250px;}
 .size-3{width: 200px;}
@@ -189,8 +206,8 @@ input, textarea {
 
 
 /*           Font Sizes and Manipulation             */
-.font-normall {font-size: 1em;}
 .font-small {font-size: 0.75em;}
+.font-normall {font-size: 1em;}
 .font-medium {font-size: 1.25em;}
 .font-large {font-size: 1.5em;}
 
@@ -201,26 +218,215 @@ input, textarea {
 p {
     font-size: 1em;
     height: 50%;
-    margin: 20px auto;
+    margin: 0 auto;
+    padding: 20px 0;
     color: black;
 }
 
 
-/* Media Query  */
+/* Media Query in chronological order  */
 
-@media only screen and (max-width:1000px) {
-    p {
-        padding: 35px;
-    }
-    .box-1{
-        width: 49%;
-    }
-    .box-2{
-        width: 100%;
-    }
+
+@media only screen and (min-device-width:800px) and (max-device-width:1200px) and (orientation:portrait){
+    .box-1{width: 49%;}
+    .box-2{width: 100%;}    
+    .box-1:last-child{width: 100%;margin: 10px 0;}
+    .height1{height: auto;}
     
-    .box-1:last-child{
-        width: 100%;
-        margin: 10px 0;
-    }
 }
+/* Big screens and IPAD PRO portrait */
+@media only screen and (min-device-width:800px) and (max-device-width:1200px) and (orientation:portrait) and (min-device-height:800px)
+{
+    .icon{font-size: 8em;}
+    .font-large{font-size: 2.5em;}
+    .font-medium{font-size: 2em;}
+}
+/* Big screens and IPAD PRO Landscape */
+@media only screen and (min-device-width:800px) and (max-device-width:1200px) and (orientation:landscape){
+    .box-1{width: 49%;}
+    .box-2{width: 100%;}    
+    .box-1:last-child{width: 100%;margin: 10px 0;}
+    .height1{height: auto;}
+
+    /* Font specific to landscape */
+    .font-small{font-size: 0.75em;}
+    .font-normall{font-size: 0.85em;}
+    .font-medium{font-size: 1em;}
+    .font-large{font-size: 1.25em;}
+
+    .icon{margin-top: 25px;font-size: 3em;}
+    .icon+p{padding-top: 10px;}
+    .icon+p.p-large{width: 98%;}
+    
+    
+}
+/* FOR IPADS LANDSCAPE */
+@media only screen and (min-device-width:800px) and (max-device-width:1200px) and (orientation:landscape) and (min-device-height:768px)
+{
+    .icon{font-size: 5em;}
+    .font-large{font-size: 2em;}
+    .font-medium{font-size: 1.5em;}
+
+
+}
+@media only screen and (min-device-width:400px) and (max-device-width:799px) and (orientation:portrait)
+{
+    
+    .box-1{width: 49%;}
+    .box-2{width: 100%;}    
+    .box-1:last-child{width: 100%;margin: 10px 0;}
+    .height1{height: auto;}
+    
+    .small-label,.medium-label,.large-label{float: none;width:100%;margin: 0px;}
+    input,.small-input,.medium-input,.large-input{float: none;width:100%;margin: 0px;}
+    label.floatright {float:left;}
+
+    /* NAVBAR */
+    .logo{
+        float:none;
+        display: inline;
+        margin: 0;
+        
+    }
+    .logo h1{float: none;}
+    .nav-container {float: none;background-color: inherit;}
+    .nav-container li {
+        float: none;
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+        background-color: inherit;
+    }
+    .nav-container li a {display: inline-block;height: 100%;width: 100%;}
+
+    /* Fonts */
+    .font-small {font-size: 0.5em;}
+    .font-normall {font-size: 0.75em;}
+    .font-medium {font-size: 0.85em;}
+    .font-large {font-size: 1em;}
+}
+/* FOR IPADS PORTRAIT*/
+@media only screen and (min-device-width:400px) and (max-device-width:799px) and (orientation:portrait) and (min-device-height:1000px)
+{
+    .icon{font-size: 5em;}
+    .font-medium{font-size: 1.5em;}
+    .font-large{font-size: 2em;}
+
+}
+
+/* For Phablets portrait*/
+@media only screen and (min-device-width:400px) and (max-device-width:799px) and (orientation:portrait) and (min-device-height:768px)
+{
+    .font-large{font-size: 1.5em;}
+    .font-medium{font-size: 1em;}
+    
+
+}
+/* For big phones and Phablets */
+@media only screen and (min-device-width:400px) and (max-device-width:799px) and (orientation:landscape)
+{
+    
+    .box-1{width: 49%;}
+    .box-2{width: 100%;}    
+    .box-1:last-child{width: 100%;margin: 10px 0;}
+    .height1{height: auto;}
+    
+    .small-label,.medium-label,.large-label{float: none;width:100%;margin: 0px;}
+    input,.small-input,.medium-input,.large-input{float: none;width:100%;margin: 0px;}
+    label.floatright {float:left;}
+
+    /* NAVBAR */
+    .logo{
+        float:none;
+        display: inline;
+        margin: 0;
+        
+    }
+    .logo h1{float: none;}
+    .nav-container {float: none;background-color: inherit;}
+    .nav-container li {
+        float: none;
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+        background-color: inherit;
+    }
+    .nav-container li a {display: inline-block;height: 100%;width: 100%;}
+
+    /* Fonts */
+    .font-small {font-size: 0.5em;}
+    .font-normall {font-size: 0.75em;}
+    .font-medium {font-size: 0.85em;}
+    .font-large {font-size: 1em;}
+
+    .icon{margin-top:20px;font-size: 3em;}
+    .icon + p{padding-top: 10px;}
+    .icon + p.p-large{width:98%;}
+}
+
+/* For small screens landscape */
+@media only screen and (min-device-width:400px) and (max-device-width:799px) and (max-height:400px) and (orientation:landscape)
+{
+    .icon{margin-top: 10px;font-size: 2.5em}
+    .icon+p{padding-top: 15px;font-size: 0.75em;}
+
+
+}
+
+/* Very small screens GENERAL */
+
+@media only screen and (min-device-width:100px) and (max-device-width:399px)
+{
+    
+    .box-1{width: 100%;height: auto;margin-top: 10px;}
+    .box-2{width: 100%;height: auto;margin-top: 10px;}    
+    .height1{height: auto;}
+    
+    .small-label,.medium-label,.large-label{float: none;width:100%;margin: 0px;}
+    input,.small-input,.medium-input,.large-input{float: none;width:100%;margin: 0px;}
+    label.floatright {float:left;}
+
+    .p-large{width: 100%;}
+    .p-medium{width: 90%;}
+    .p-small{width: 75%;}
+
+    /* NAVBAR */
+    .logo{
+        float:none;
+        display: inline;
+        margin: 0;
+        
+    }
+    .logo h1{float: none;}
+    .nav-container {float: none;background-color: inherit;}
+    .nav-container li {
+        float: none;
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+        background-color: inherit;
+    }
+    .nav-container li a {display: inline-block;height: 100%;width: 100%;}
+    p{
+        font-size: 75%;
+    }
+    .icon{
+        margin-top: 30px;
+    }
+    .nav-container {
+        display: block;
+    }
+    .box-1, .box-2, .box-3{width:100%; margin-left: 0;}
+    
+    /* Fonts */
+    .font-small {font-size: 0.5em;}
+    .font-normall {font-size: 0.65em;}
+    .font-medium {font-size: 0.85em;}
+    .font-large {font-size: 1em;}
+}
+
+
+
+
+/* Specific Edits here: */
+#new{background:none;}
